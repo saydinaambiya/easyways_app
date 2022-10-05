@@ -20,7 +20,9 @@ class SplashPage extends StatelessWidget {
               ),
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/icons/icon_plan.png,'),
+                  image: AssetImage(
+                    'assets/icons/icon_plan.png',
+                  ),
                 ),
               ),
             ),
