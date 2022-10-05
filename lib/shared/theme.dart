@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//default margin and radius
+double defaultMargin = 24.0;
+double defaultRadius = 17.0;
+
 //colors
 Color greenColor = const Color(0xFF0EC3AE);
 Color greyColor = const Color(0xFF9698A9);
@@ -10,7 +14,7 @@ Color pinkColor = const Color(0xFFEB70A5);
 Color primaryColor = const Color(0xFF2D46B9);
 Color whiteColor = const Color(0xFFF8F8F8);
 
-//fonts
+//fonts style
 TextStyle navyText = GoogleFonts.poppins(
   color: navyColor,
 );
@@ -30,6 +34,7 @@ TextStyle blueText = GoogleFonts.poppins(
   color: primaryColor,
 );
 
+//font weight
 FontWeight extrabold = FontWeight.w800;
 FontWeight semiBold = FontWeight.w600;
 FontWeight reguler = FontWeight.w400;
