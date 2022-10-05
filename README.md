@@ -1,6 +1,6 @@
-# easyplane_app
+# EASYWAYS FLUTTER APP
 
-A new Flutter project.
+A Flutter Application for choose the plan destinations and book the favorite place for YOU. Fly is EASY
 
 ## Getting Started
 
