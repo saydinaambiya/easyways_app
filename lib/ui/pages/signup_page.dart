@@ -1,5 +1,4 @@
 import 'package:easyplane_app/shared/theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -139,11 +138,14 @@ class SignUpPage extends StatelessWidget {
 
       //submit button (getstarted)
       Widget submitButton() {
+        // ignore: sized_box_for_whitespace
         return Container(
           width: double.infinity,
           height: 55,
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/bonus');
+            },
             style: TextButton.styleFrom(
                 backgroundColor: primaryColor,
                 shape: RoundedRectangleBorder(

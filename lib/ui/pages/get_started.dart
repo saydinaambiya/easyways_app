@@ -50,7 +50,7 @@ class GetStartedPage extends StatelessWidget {
                   height: 55,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/signUp');
+                      Navigator.pushReplacementNamed(context, '/signup');
                     },
                     style: TextButton.styleFrom(
                         backgroundColor: primaryColor,

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:easyplane_app/shared/theme.dart';
-import 'package:easyplane_app/ui/pages/get_started.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -43,7 +42,7 @@ class _SplashPageState extends State<SplashPage> {
               ),
             ),
             Text(
-              'EASYPLAN',
+              'EASYWAYS',
               style: whiteText.copyWith(
                 fontWeight: medium,
                 fontSize: 32,
