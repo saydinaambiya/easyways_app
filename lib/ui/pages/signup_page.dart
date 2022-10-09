@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -139,28 +140,11 @@ class SignUpPage extends StatelessWidget {
 
       //submit button (getstarted)
       Widget submitButton() {
-        // ignore: sized_box_for_whitespace
-        return Container(
-          width: double.infinity,
-          height: 55,
-          child: TextButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '/bonus');
-            },
-            style: TextButton.styleFrom(
-                backgroundColor: primaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(defaultRadius),
-                )),
-            child: Text(
-              'Get Started',
-              style: whiteText.copyWith(
-                fontSize: 18,
-                fontWeight: medium,
-              ),
-            ),
-          ),
-        );
+        return CustomButton(
+            textButton: 'Get Started',
+            onPressedButton: () {
+              Navigator.pushNamed(context, '/bonus');
+            });
       }
 
       //terms and conditions

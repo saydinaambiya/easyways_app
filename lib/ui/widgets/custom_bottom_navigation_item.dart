@@ -6,7 +6,7 @@ class CustomBottomNavItem extends StatelessWidget {
   final String imageUrl;
   final bool isSelected;
 
-  CustomBottomNavItem({
+  const CustomBottomNavItem({
     Key? key,
     required this.imageUrl,
     this.isSelected = false,

@@ -1,5 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
-import 'package:easyplane_app/ui/widgets/bottom_navigation_item.dart';
+import 'package:easyplane_app/ui/widgets/custom_bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {

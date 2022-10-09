@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BonusPage extends StatelessWidget {
@@ -125,27 +126,13 @@ class BonusPage extends StatelessWidget {
 
     //start button
     Widget startbutton() {
-      return Container(
-        width: 220,
-        height: 55,
-        margin: const EdgeInsets.only(top: 50),
-        child: TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/main');
-            },
-            style: TextButton.styleFrom(
-                backgroundColor: primaryColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                  defaultRadius,
-                ))),
-            child: Text(
-              'Start Fly Now',
-              style: whiteText.copyWith(
-                fontSize: 18,
-                fontWeight: medium,
-              ),
-            )),
+      return CustomButton(
+        widthButton: 220,
+        marginButton: const EdgeInsets.only(top: 50),
+        textButton: 'Start Fly Now',
+        onPressedButton: () {
+          Navigator.pushNamed(context, '/main');
+        },
       );
     }
 

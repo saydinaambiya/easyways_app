@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -41,29 +42,15 @@ class GetStartedPage extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                Container(
-                  margin: const EdgeInsets.only(
+                CustomButton(
+                  textButton: 'Get Started',
+                  onPressedButton: () {
+                    Navigator.pushReplacementNamed(context, '/signup');
+                  },
+                  widthButton: 220,
+                  marginButton: const EdgeInsets.only(
                     top: 50,
                     bottom: 80,
-                  ),
-                  width: 220,
-                  height: 55,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/signup');
-                    },
-                    style: TextButton.styleFrom(
-                        backgroundColor: primaryColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(defaultRadius))),
-                    child: Text(
-                      'Get Started',
-                      style: whiteText.copyWith(
-                        fontSize: 16,
-                        fontWeight: medium,
-                      ),
-                    ),
                   ),
                 )
               ],
