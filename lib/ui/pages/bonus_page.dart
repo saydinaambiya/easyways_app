@@ -150,7 +150,7 @@ class BonusPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: backgroundColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

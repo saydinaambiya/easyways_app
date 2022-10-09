@@ -6,6 +6,7 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //title text
     Widget title() {
       return Container(
         margin: const EdgeInsets.only(
@@ -207,7 +208,7 @@ class SignUpPage extends StatelessWidget {
 
     //scaffold to load title, form, and button
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(

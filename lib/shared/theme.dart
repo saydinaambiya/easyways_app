@@ -6,13 +6,15 @@ double defaultMargin = 24.0;
 double defaultRadius = 17.0;
 
 //colors
+Color backgroundColor = const Color(0xFFF8F8F8);
 Color greenColor = const Color(0xFF0EC3AE);
 Color greyColor = const Color(0xFF9698A9);
 Color inactiveColor = const Color(0xFFDBD7EC);
 Color navyColor = const Color(0xFF1E3163);
 Color pinkColor = const Color(0xFFEB70A5);
 Color primaryColor = const Color(0xFF2D46B9);
-Color whiteColor = const Color(0xFFF8F8F8);
+Color transparentColor = Colors.transparent;
+Color whiteColor = const Color(0xFFFFFFFF);
 
 //fonts style
 TextStyle navyText = GoogleFonts.poppins(
