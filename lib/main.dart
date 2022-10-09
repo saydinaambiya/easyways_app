@@ -1,5 +1,6 @@
 import 'package:easyplane_app/ui/pages/bonus_page.dart';
 import 'package:easyplane_app/ui/pages/get_started.dart';
+import 'package:easyplane_app/ui/pages/main_page.dart';
 import 'package:easyplane_app/ui/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/getStarted': (context) => const GetStartedPage(),
         '/signup': (context) => const SignUpPage(),
         '/bonus': (context) => const BonusPage(),
+        '/main': (context) => const MainPage(),
       },
     );
   }
