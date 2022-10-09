@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/widgets/bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
@@ -25,106 +26,11 @@ class MainPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/icons/icon_home.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  )
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/icons/icon_booking.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: transparentColor,
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  )
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/icons/icon_card.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: transparentColor,
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  )
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/icons/icon_settings.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: transparentColor,
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  )
-                ],
-              ),
+              CustomBottomNavItem(
+                  imageUrl: 'assets/icons/icon_home.png', isSelected: true),
+              CustomBottomNavItem(imageUrl: 'assets/icons/icon_booking.png'),
+              CustomBottomNavItem(imageUrl: 'assets/icons/icon_card.png'),
+              CustomBottomNavItem(imageUrl: 'assets/icons/icon_settings.png')
             ],
           ),
         ),
