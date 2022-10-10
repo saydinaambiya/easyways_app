@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/pages/home_page.dart';
 import 'package:easyplane_app/ui/widgets/custom_bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +8,10 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget buildContent() {
+      return HomePage();
+    }
+
     //bottom navigation
     Widget customBottomNavigation() {
       return Align(
@@ -25,7 +30,7 @@ class MainPage extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
+            children: const [
               CustomBottomNavItem(
                   imageUrl: 'assets/icons/icon_home.png', isSelected: true),
               CustomBottomNavItem(imageUrl: 'assets/icons/icon_booking.png'),
@@ -41,7 +46,7 @@ class MainPage extends StatelessWidget {
       backgroundColor: backgroundColor,
       body: Stack(
         children: [
-          Text('Main Page'),
+          buildContent(),
           customBottomNavigation(),
         ],
       ),

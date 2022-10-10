@@ -21,9 +21,9 @@ class BonusPage extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: primaryColor.withOpacity(0.5),
-              blurRadius: 50,
-              offset: const Offset(0, 10),
+              color: primaryColor.withOpacity(0.2),
+              blurRadius: 20,
+              offset: const Offset(0, 20),
             ),
           ],
         ),
