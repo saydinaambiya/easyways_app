@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/widgets/destination_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -58,9 +59,53 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget popularDestinations() {
+      return Container(
+        margin: EdgeInsets.only(top: 30),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: const [
+              DestinationCard(
+                imageUrlDestination: 'assets/images/image_ciliwung.png',
+                nameDestination: 'Lake Ciliwung',
+                cityDestination: 'Tanggerang',
+                ratingDestination: 4.8,
+              ),
+              DestinationCard(
+                imageUrlDestination: 'assets/images/image_whitehouse.png',
+                nameDestination: 'White House',
+                cityDestination: 'Spain',
+                ratingDestination: 4.7,
+              ),
+              DestinationCard(
+                imageUrlDestination: 'assets/images/image_heyo.png',
+                nameDestination: 'Hill Heyo',
+                cityDestination: 'Monaco',
+                ratingDestination: 4.8,
+              ),
+              DestinationCard(
+                imageUrlDestination: 'assets/images/image_menarra.png',
+                nameDestination: 'Menarra',
+                cityDestination: 'Japan',
+                ratingDestination: 5.0,
+              ),
+              DestinationCard(
+                imageUrlDestination: 'assets/images/image_teduh.png',
+                nameDestination: 'Payung Teduh',
+                cityDestination: 'Singapore',
+                ratingDestination: 4.8,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     return ListView(
       children: [
         headerHome(),
+        popularDestinations(),
       ],
     );
   }
