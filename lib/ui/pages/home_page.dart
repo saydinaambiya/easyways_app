@@ -1,5 +1,6 @@
 import 'package:easyplane_app/shared/theme.dart';
 import 'package:easyplane_app/ui/widgets/destination_card.dart';
+import 'package:easyplane_app/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -37,7 +38,7 @@ class HomePage extends StatelessWidget {
                 Container(
                   width: 60,
                   height: 60,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       image: AssetImage('assets/images/ava.png'),
@@ -61,7 +62,7 @@ class HomePage extends StatelessWidget {
 
     Widget popularDestinations() {
       return Container(
-        margin: EdgeInsets.only(top: 30),
+        margin: const EdgeInsets.only(top: 30),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -102,10 +103,33 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget newDestinations() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 30,
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        child: Column(
+          children: [
+            Text(
+              'New This Year',
+              style: navyText.copyWith(
+                fontSize: 18,
+                fontWeight: semiBold,
+              ),
+            ),
+            DestinationTile(),
+          ],
+        ),
+      );
+    }
+
     return ListView(
       children: [
         headerHome(),
         popularDestinations(),
+        newDestinations(),
       ],
     );
   }
