@@ -2,7 +2,18 @@ import 'package:easyplane_app/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class DestinationTile extends StatelessWidget {
-  const DestinationTile({Key? key}) : super(key: key);
+  final String imageUrlTile;
+  final String titleTile;
+  final String cityTile;
+  final double ratingTile;
+
+  const DestinationTile({
+    Key? key,
+    required this.imageUrlTile,
+    required this.titleTile,
+    required this.cityTile,
+    this.ratingTile = 0.0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +32,10 @@ class DestinationTile extends StatelessWidget {
             height: 70,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  'assets/images/image_berantan.png',
+                  imageUrlTile,
                 ),
               ),
             ),
@@ -34,7 +45,7 @@ class DestinationTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Danau Beratan',
+                  titleTile,
                   style: navyText.copyWith(
                     fontSize: 18,
                     fontWeight: medium,
@@ -42,7 +53,7 @@ class DestinationTile extends StatelessWidget {
                 ),
                 const SizedBox(height: 5),
                 Text(
-                  'Singajara',
+                  cityTile,
                   style: greyText.copyWith(
                     fontWeight: light,
                   ),
@@ -65,7 +76,7 @@ class DestinationTile extends StatelessWidget {
                 ),
               ),
               Text(
-                '4.5',
+                ratingTile.toString(),
                 style: navyText.copyWith(
                   fontWeight: medium,
                 ),
