@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/widgets/interest_item.dart';
 import 'package:easyplane_app/ui/widgets/photo_item.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +40,11 @@ class DetailPage extends StatelessWidget {
     Widget detailContent() {
       return Container(
         width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+        margin: EdgeInsets.only(
+          left: defaultMargin,
+          right: defaultMargin,
+          bottom: 30,
+        ),
         child: Column(
           children: [
             // NOTE : EMBLEM LOGO
@@ -148,10 +153,40 @@ class DetailPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Row(
-                    children: [
+                    children: const [
                       PhotoItem(imageUrl: 'assets/images/photos1_ciliwung.png'),
                       PhotoItem(imageUrl: 'assets/images/photos2_ciliwung.png'),
                       PhotoItem(imageUrl: 'assets/images/photos3_ciliwung.png'),
+                    ],
+                  ),
+                  // NOTE : INTEREST
+                  const SizedBox(height: 20),
+                  Text(
+                    'Interest',
+                    style: navyText.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Row(
+                    children: [
+                      InterestItem(
+                        textInterest: 'Kids Park',
+                      ),
+                      InterestItem(
+                        textInterest: 'Honor Bridge',
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      InterestItem(
+                        textInterest: 'City Museuem',
+                      ),
+                      InterestItem(
+                        textInterest: 'Central Mall',
+                      ),
                     ],
                   ),
                 ],
@@ -164,12 +199,14 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Stack(
-        children: [
-          backgroundImage(),
-          customShadow(),
-          detailContent(),
-        ],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            backgroundImage(),
+            customShadow(),
+            detailContent(),
+          ],
+        ),
       ),
     );
   }
