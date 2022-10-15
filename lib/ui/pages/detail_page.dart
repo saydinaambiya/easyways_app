@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/widgets/photo_item.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
@@ -101,6 +102,56 @@ class DetailPage extends StatelessWidget {
                           fontWeight: medium,
                         ),
                       )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            // NOTE : DESC
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 30,
+              ),
+              decoration: BoxDecoration(
+                color: whiteColor,
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // NOTE : ABOUT
+                  Text(
+                    'About',
+                    style: navyText.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    'Berada di jalur jalan provinsi yang menghubungkan Denpasar Singaraja serta letaknya yang dekat dengan Kebun Raya Eka Karya menjadikan tempat Bali.',
+                    style: navyText.copyWith(
+                      height: 2.6,
+                    ),
+                  ),
+                  // NOTE : PHOTOS
+                  const SizedBox(height: 20),
+                  Text(
+                    'Photos',
+                    style: navyText.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Row(
+                    children: [
+                      PhotoItem(imageUrl: 'assets/images/photos1_ciliwung.png'),
+                      PhotoItem(imageUrl: 'assets/images/photos2_ciliwung.png'),
+                      PhotoItem(imageUrl: 'assets/images/photos3_ciliwung.png'),
                     ],
                   ),
                 ],
