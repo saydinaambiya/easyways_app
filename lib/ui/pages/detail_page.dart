@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/widgets/custom_button.dart';
 import 'package:easyplane_app/ui/widgets/interest_item.dart';
 import 'package:easyplane_app/ui/widgets/photo_item.dart';
 import 'package:flutter/material.dart';
@@ -40,10 +41,8 @@ class DetailPage extends StatelessWidget {
     Widget detailContent() {
       return Container(
         width: double.infinity,
-        margin: EdgeInsets.only(
-          left: defaultMargin,
-          right: defaultMargin,
-          bottom: 30,
+        margin: EdgeInsets.symmetric(
+          horizontal: defaultMargin,
         ),
         child: Column(
           children: [
@@ -189,6 +188,43 @@ class DetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                ],
+              ),
+            ),
+            // NOTE : PRICE AND BUTTON
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              child: Row(
+                children: [
+                  // NOTE : PRICE
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IDR 2.500.000',
+                          style: navyText.copyWith(
+                            fontSize: 18,
+                            fontWeight: medium,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          'per orang',
+                          style: greyText.copyWith(
+                            fontWeight: light,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  // NOTE : BOOK BUTTON
+                  CustomButton(
+                    textButton: 'Book Now',
+                    onPressedButton: () {},
+                    widthButton: 170,
+                  )
                 ],
               ),
             ),
