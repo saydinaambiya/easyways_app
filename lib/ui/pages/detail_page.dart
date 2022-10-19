@@ -1,4 +1,5 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/pages/choose_seat_page.dart';
 import 'package:easyplane_app/ui/widgets/custom_button.dart';
 import 'package:easyplane_app/ui/widgets/interest_item.dart';
 import 'package:easyplane_app/ui/widgets/photo_item.dart';
@@ -222,7 +223,14 @@ class DetailPage extends StatelessWidget {
                   // NOTE : BOOK BUTTON
                   CustomButton(
                     textButton: 'Book Now',
-                    onPressedButton: () {},
+                    onPressedButton: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChooseSeatPage(),
+                        ),
+                      );
+                    },
                     widthButton: 170,
                   )
                 ],
