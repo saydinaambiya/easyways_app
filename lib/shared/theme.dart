@@ -15,6 +15,7 @@ Color pinkColor = const Color(0xFFEB70A5);
 Color primaryColor = const Color(0xFF2D46B9);
 Color transparentColor = Colors.transparent;
 Color whiteColor = const Color(0xFFFFFFFF);
+Color unavailableColor = const Color(0xFFEBECF1);
 
 //fonts style
 TextStyle navyText = GoogleFonts.poppins(

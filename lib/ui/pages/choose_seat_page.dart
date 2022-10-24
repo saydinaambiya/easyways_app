@@ -137,6 +137,20 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
                 ),
               ],
             ),
+
+            //NOTE : SEAT 1
+            Row(
+              children: [
+                Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: unavailableColor,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       );
