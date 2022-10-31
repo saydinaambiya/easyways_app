@@ -94,8 +94,11 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
           children: [
             //NOTE: SEAT INDICATORS
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Expanded(
+                Container(
+                  width: 48,
+                  height: 48,
                   child: Center(
                     child: Text(
                       'A',
@@ -103,7 +106,9 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
                     ),
                   ),
                 ),
-                Expanded(
+                Container(
+                  width: 48,
+                  height: 48,
                   child: Center(
                     child: Text(
                       'B',
@@ -111,7 +116,9 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
                     ),
                   ),
                 ),
-                Expanded(
+                Container(
+                  width: 48,
+                  height: 48,
                   child: Center(
                     child: Text(
                       '',
@@ -119,7 +126,9 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
                     ),
                   ),
                 ),
-                Expanded(
+                Container(
+                  width: 48,
+                  height: 48,
                   child: Center(
                     child: Text(
                       'C',
@@ -127,7 +136,9 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
                     ),
                   ),
                 ),
-                Expanded(
+                Container(
+                  width: 48,
+                  height: 48,
                   child: Center(
                     child: Text(
                       'D',
@@ -139,17 +150,57 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
             ),
 
             //NOTE : SEAT 1
-            Row(
-              children: [
-                Container(
-                  width: 48,
-                  height: 48,
-                  decoration: BoxDecoration(
-                    color: unavailableColor,
-                    borderRadius: BorderRadius.circular(15),
+            Container(
+              margin: const EdgeInsets.only(top: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: unavailableColor,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                   ),
-                )
-              ],
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: unavailableColor,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  Container(
+                    width: 48,
+                    height: 48,
+                    child: Center(
+                      child: Text(
+                        '1',
+                        style: greyText.copyWith(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: unavailableColor,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: unavailableColor,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
