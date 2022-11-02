@@ -6,6 +6,7 @@ double defaultMargin = 24.0;
 double defaultRadius = 17.0;
 
 //colors
+Color availableColor = const Color(0xFFE0D9FF);
 Color backgroundColor = const Color(0xFFF8F8F8);
 Color greenColor = const Color(0xFF0EC3AE);
 Color greyColor = const Color(0xFF9698A9);
