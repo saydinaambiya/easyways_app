@@ -1,4 +1,6 @@
 import 'package:easyplane_app/shared/theme.dart';
+import 'package:easyplane_app/ui/pages/checkout_page.dart';
+import 'package:easyplane_app/ui/widgets/custom_button.dart';
 import 'package:easyplane_app/ui/widgets/seat_item.dart';
 import 'package:flutter/material.dart';
 
@@ -279,9 +281,72 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
                 ],
               ),
             ),
+
+            //NOTE: YOUR SEAT
+            Container(
+              margin: const EdgeInsets.only(top: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Your Seat',
+                    style: greyText.copyWith(
+                      fontWeight: light,
+                    ),
+                  ),
+                  Text(
+                    'A3, B3',
+                    style: navyText.copyWith(
+                      fontSize: 16,
+                      fontWeight: medium,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            //NOTE: TOTAL
+            Container(
+              margin: const EdgeInsets.only(top: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Total',
+                    style: greyText.copyWith(
+                      fontWeight: light,
+                    ),
+                  ),
+                  Text(
+                    'IDR 54.000.000',
+                    style: navyText.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       );
+    }
+
+    Widget checkoutButton() {
+      return CustomButton(
+          marginButton: const EdgeInsets.only(
+            top: 30,
+            bottom: 46,
+          ),
+          textButton: 'Continue to checkout',
+          onPressedButton: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CheckoutPage(),
+              ),
+            );
+          });
     }
 
     return Scaffold(
@@ -293,6 +358,7 @@ class _ChooseSeatPageState extends State<ChooseSeatPage> {
             title(),
             setStatus(),
             selectSeat(),
+            checkoutButton(),
           ],
         ),
       ),
