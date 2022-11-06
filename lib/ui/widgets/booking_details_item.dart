@@ -3,7 +3,16 @@ import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
 class BookingDetailsItem extends StatelessWidget {
-  const BookingDetailsItem({Key? key}) : super(key: key);
+  final String title;
+  final String valueText;
+  final Color valueColor;
+
+  const BookingDetailsItem({
+    Key? key,
+    required this.title,
+    required this.valueText,
+    required this.valueColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +35,15 @@ class BookingDetailsItem extends StatelessWidget {
             ),
           ),
           Text(
-            "Traveler",
+            title,
             style: navyText,
           ),
           const Spacer(),
           Text(
-            "2 person",
+            valueText,
             style: navyText.copyWith(
               fontWeight: semiBold,
+              color: valueColor,
             ),
           )
         ],
