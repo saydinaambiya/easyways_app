@@ -5,8 +5,8 @@ import 'package:easyplane_app/ui/widgets/cutom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignUpPage extends StatelessWidget {
-  SignUpPage({Key? key}) : super(key: key);
+class SignInPage extends StatelessWidget {
+  SignInPage({Key? key}) : super(key: key);
 
   final TextEditingController nameController = TextEditingController(text: '');
   final TextEditingController emailController = TextEditingController(text: '');
@@ -24,7 +24,7 @@ class SignUpPage extends StatelessWidget {
           bottom: 30,
         ),
         child: Text(
-          'Join us and get\nyour next journey',
+          'Sign In\nYour Account',
           style: navyText.copyWith(
             fontSize: 24,
             fontWeight: semiBold,
@@ -111,26 +111,21 @@ class SignUpPage extends StatelessWidget {
       }
 
       //terms and conditions
-      Widget signInButton() {
-        return GestureDetector(
-          child: Container(
-            alignment: Alignment.center,
-            margin: const EdgeInsets.only(
-              top: 50,
-              bottom: 73,
-            ),
-            child: Text(
-              'Have an account? Sign in',
-              style: greyText.copyWith(
-                fontSize: 16,
-                fontWeight: light,
-                decoration: TextDecoration.underline,
-              ),
+      Widget termsButton() {
+        return Container(
+          alignment: Alignment.center,
+          margin: const EdgeInsets.only(
+            top: 50,
+            bottom: 73,
+          ),
+          child: Text(
+            'Terms and Conditions',
+            style: greyText.copyWith(
+              fontSize: 16,
+              fontWeight: light,
+              decoration: TextDecoration.underline,
             ),
           ),
-          onTap: () {
-            Navigator.pushNamed(context, '/signin');
-          },
         );
       }
 
@@ -159,7 +154,7 @@ class SignUpPage extends StatelessWidget {
               ],
             ),
           ),
-          signInButton(),
+          termsButton(),
         ],
       );
     }

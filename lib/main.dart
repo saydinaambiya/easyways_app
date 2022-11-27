@@ -4,6 +4,7 @@ import 'package:easyplane_app/ui/pages/bonus_page.dart';
 import 'package:easyplane_app/ui/pages/detail_page.dart';
 import 'package:easyplane_app/ui/pages/get_started.dart';
 import 'package:easyplane_app/ui/pages/main_page.dart';
+import 'package:easyplane_app/ui/pages/signin_page.dart';
 import 'package:easyplane_app/ui/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => SplashPage(),
           '/getStarted': (context) => GetStartedPage(),
           '/signup': (context) => SignUpPage(),
+          '/signin': (context) => SignInPage(),
           '/bonus': (context) => BonusPage(),
           '/main': (context) => MainPage(),
           '/detail': (context) => DetailPage(),
