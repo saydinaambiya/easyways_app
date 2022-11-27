@@ -1,3 +1,4 @@
+import 'package:easyplane_app/cubit/auth_cubit.dart';
 import 'package:easyplane_app/cubit/page_cubit.dart';
 import 'package:easyplane_app/ui/pages/bonus_page.dart';
 import 'package:easyplane_app/ui/pages/detail_page.dart';
@@ -22,16 +23,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => PageCubit())],
+      providers: [
+        BlocProvider(
+          create: (context) => PageCubit(),
+        ),
+        BlocProvider(
+          create: (context) => AuthCubit(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          '/': (context) => const SplashPage(),
-          '/getStarted': (context) => const GetStartedPage(),
-          '/signup': (context) => const SignUpPage(),
-          '/bonus': (context) => const BonusPage(),
-          '/main': (context) => const MainPage(),
-          '/detail': (context) => const DetailPage(),
+          '/': (context) => SplashPage(),
+          '/getStarted': (context) => GetStartedPage(),
+          '/signup': (context) => SignUpPage(),
+          '/bonus': (context) => BonusPage(),
+          '/main': (context) => MainPage(),
+          '/detail': (context) => DetailPage(),
         },
       ),
     );

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "544451277777",
+    "project_id": "easyways-app-7e97a",
+    "storage_bucket": "easyways-app-7e97a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544451277777:android:3cb96a40b60f640b5326f0",
+        "android_client_info": {
+          "package_name": "com.saydinaambiya.easyplane_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544451277777-h5ucq0hn93or9utgl2co7d8krnmvsvgs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxK_k83kxpClNnNRW8DoYilq9-pIc_zLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544451277777-h5ucq0hn93or9utgl2co7d8krnmvsvgs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

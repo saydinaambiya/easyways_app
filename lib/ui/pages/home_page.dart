@@ -1,7 +1,9 @@
+import 'package:easyplane_app/cubit/auth_cubit.dart';
 import 'package:easyplane_app/shared/theme.dart';
 import 'package:easyplane_app/ui/widgets/destination_card.dart';
 import 'package:easyplane_app/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,54 +11,62 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget headerHome() {
-      return Container(
-        margin: EdgeInsets.only(
-          left: defaultMargin,
-          right: defaultMargin,
-          top: 30,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+      return BlocBuilder<AuthCubit, AuthState>(
+        builder: (context, state) {
+          if (state is AuthSuccess) {
+            return Container(
+              margin: EdgeInsets.only(
+                left: defaultMargin,
+                right: defaultMargin,
+                top: 30,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
                     children: [
-                      Text(
-                        'Howdy,\nAnne Lizie',
-                        style: navyText.copyWith(
-                          fontSize: 24,
-                          fontWeight: semiBold,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Howdy,\n${state.user.name}',
+                              style: navyText.copyWith(
+                                fontSize: 24,
+                                fontWeight: semiBold,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
-                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/ava.png'),
+                          ),
+                        ),
                       ),
                     ],
                   ),
-                ),
-                Container(
-                  width: 60,
-                  height: 60,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/ava.png'),
+                  const SizedBox(height: 6),
+                  Text(
+                    'Whe to fly today?',
+                    style: greyText.copyWith(
+                      fontSize: 16,
+                      fontWeight: light,
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 6),
-            Text(
-              'Whe to fly today?',
-              style: greyText.copyWith(
-                fontSize: 16,
-                fontWeight: light,
+                ],
               ),
-            ),
-          ],
-        ),
+            );
+          } else {
+            return SizedBox();
+          }
+        },
       );
     }
 
