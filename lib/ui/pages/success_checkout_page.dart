@@ -1,6 +1,8 @@
+import 'package:easyplane_app/cubit/page_cubit.dart';
 import 'package:easyplane_app/shared/theme.dart';
 import 'package:easyplane_app/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SuccessCheckout extends StatelessWidget {
   const SuccessCheckout({Key? key}) : super(key: key);
@@ -48,6 +50,7 @@ class SuccessCheckout extends StatelessWidget {
                 top: 50,
               ),
               onPressedButton: () {
+                context.read<PageCubit>().setPage(1);
                 Navigator.pushNamedAndRemoveUntil(
                     context, '/main', (route) => false);
               },

@@ -1,11 +1,15 @@
 import 'package:easyplane_app/cubit/auth_cubit.dart';
+import 'package:easyplane_app/cubit/destination_cubit.dart';
 import 'package:easyplane_app/cubit/page_cubit.dart';
+import 'package:easyplane_app/cubit/seat_cubit.dart';
+import 'package:easyplane_app/cubit/transaction_cubit.dart';
 import 'package:easyplane_app/ui/pages/bonus_page.dart';
 import 'package:easyplane_app/ui/pages/detail_page.dart';
 import 'package:easyplane_app/ui/pages/get_started.dart';
 import 'package:easyplane_app/ui/pages/main_page.dart';
 import 'package:easyplane_app/ui/pages/signin_page.dart';
 import 'package:easyplane_app/ui/pages/signup_page.dart';
+import 'package:easyplane_app/ui/pages/success_checkout_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -31,6 +35,15 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AuthCubit(),
         ),
+        BlocProvider(
+          create: (context) => DestinationCubit(),
+        ),
+        BlocProvider(
+          create: (context) => SeatCubit(),
+        ),
+        BlocProvider(
+          create: (context) => TransactionCubit(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -41,7 +54,7 @@ class MyApp extends StatelessWidget {
           '/signin': (context) => SignInPage(),
           '/bonus': (context) => BonusPage(),
           '/main': (context) => MainPage(),
-          '/detail': (context) => DetailPage(),
+          '/success': (context) => SuccessCheckout()
         },
       ),
     );

@@ -1,26 +1,23 @@
+import 'package:easyplane_app/models/destination_model.dart';
+import 'package:easyplane_app/ui/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/theme.dart';
 
 class DestinationCard extends StatelessWidget {
-  final String imageUrlDestination;
-  final String nameDestination;
-  final String cityDestination;
-  final double ratingDestination;
+  final DestinationModel destination;
 
-  const DestinationCard({
+  const DestinationCard(
+    this.destination, {
     Key? key,
-    required this.imageUrlDestination,
-    required this.nameDestination,
-    required this.cityDestination,
-    this.ratingDestination = 0.0,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/detail');
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => DetailPage(destination)));
       },
       child: Container(
         width: 200,
@@ -41,7 +38,7 @@ class DestinationCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
                 image: DecorationImage(
-                  image: AssetImage(imageUrlDestination),
+                  image: NetworkImage(destination.imageUrl),
                 ),
               ),
               child: Align(
@@ -70,7 +67,7 @@ class DestinationCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        ratingDestination.toString(),
+                        destination.rating.toString(),
                         style: navyText.copyWith(
                           fontWeight: medium,
                         ),
@@ -86,7 +83,7 @@ class DestinationCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    nameDestination,
+                    destination.name,
                     style: navyText.copyWith(
                       fontSize: 18,
                       fontWeight: medium,
@@ -94,7 +91,7 @@ class DestinationCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    cityDestination,
+                    destination.city,
                     style: greyText.copyWith(
                       fontWeight: light,
                     ),

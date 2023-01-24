@@ -1,4 +1,5 @@
 import 'package:easyplane_app/cubit/auth_cubit.dart';
+import 'package:easyplane_app/cubit/page_cubit.dart';
 import 'package:easyplane_app/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,8 +18,9 @@ class SettingPage extends StatelessWidget {
             ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text(state.error)));
           } else if (state is AuthInitial) {
+            context.read<PageCubit>().setPage(0);
             Navigator.pushNamedAndRemoveUntil(
-                context, '/signup', (route) => false);
+                context, '/signin', (route) => false);
           }
         },
         builder: (context, state) {

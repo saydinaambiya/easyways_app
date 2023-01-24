@@ -8,11 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SignInPage extends StatelessWidget {
   SignInPage({Key? key}) : super(key: key);
 
-  final TextEditingController nameController = TextEditingController(text: '');
   final TextEditingController emailController = TextEditingController(text: '');
   final TextEditingController passwordController =
       TextEditingController(text: '');
-  final TextEditingController hobbyController = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +32,6 @@ class SignInPage extends StatelessWidget {
     }
 
     Widget inputSection() {
-      //name textformfield
-      Widget nameInput() {
-        return CustomTextFormField(
-          titleInput: 'Full Name',
-          hintInput: 'Your full name',
-          controller: nameController,
-        );
-      }
-
       //email textformfield
       Widget emailInput() {
         return CustomTextFormField(
@@ -52,7 +41,7 @@ class SignInPage extends StatelessWidget {
         );
       }
 
-      //name textformfield
+      //password textformfield
       Widget passwordInput() {
         return CustomTextFormField(
           obscureTextInput: true,
@@ -62,22 +51,13 @@ class SignInPage extends StatelessWidget {
         );
       }
 
-      //name textformfield
-      Widget hobbyInput() {
-        return CustomTextFormField(
-          titleInput: 'Hobby',
-          hintInput: 'Your hobby',
-          controller: hobbyController,
-        );
-      }
-
       //submit button (getstarted)
-      Widget submitButton() {
+      Widget signInButton() {
         return BlocConsumer<AuthCubit, AuthState>(
           listener: (context, state) {
             if (state is AuthSuccess) {
               Navigator.pushNamedAndRemoveUntil(
-                  context, '/bonus', (route) => false);
+                  context, '/main', (route) => false);
             } else if (state is AuthFailed) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -97,35 +77,37 @@ class SignInPage extends StatelessWidget {
             }
             return CustomButton(
                 marginButton: EdgeInsets.only(bottom: 30),
-                textButton: 'Get Started',
+                textButton: 'Sign In',
                 onPressedButton: () {
-                  context.read<AuthCubit>().signUp(
-                        email: emailController.text,
-                        password: passwordController.text,
-                        name: nameController.text,
-                        hobby: hobbyController.text,
-                      );
+                  context.read<AuthCubit>().signIn(
+                      email: emailController.text,
+                      password: passwordController.text);
                 });
           },
         );
       }
 
-      //terms and conditions
-      Widget termsButton() {
-        return Container(
-          alignment: Alignment.center,
-          margin: const EdgeInsets.only(
-            top: 50,
-            bottom: 73,
-          ),
-          child: Text(
-            'Terms and Conditions',
-            style: greyText.copyWith(
-              fontSize: 16,
-              fontWeight: light,
-              decoration: TextDecoration.underline,
+      //sign up button
+      Widget signUpButton() {
+        return GestureDetector(
+          child: Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.only(
+              top: 50,
+              bottom: 73,
+            ),
+            child: Text(
+              "Don't have an accout? Sign Up",
+              style: greyText.copyWith(
+                fontSize: 16,
+                fontWeight: light,
+                decoration: TextDecoration.underline,
+              ),
             ),
           ),
+          onTap: () {
+            Navigator.pushNamed(context, '/signup');
+          },
         );
       }
 
@@ -145,16 +127,14 @@ class SignInPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                nameInput(),
                 emailInput(),
                 passwordInput(),
-                hobbyInput(),
                 const SizedBox(height: 10),
-                submitButton(),
+                signInButton(),
               ],
             ),
           ),
-          termsButton(),
+          signUpButton(),
         ],
       );
     }
