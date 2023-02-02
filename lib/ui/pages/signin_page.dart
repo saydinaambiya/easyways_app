@@ -1,7 +1,7 @@
 import 'package:easyplane_app/cubit/auth_cubit.dart';
 import 'package:easyplane_app/shared/theme.dart';
 import 'package:easyplane_app/ui/widgets/custom_button.dart';
-import 'package:easyplane_app/ui/widgets/cutom_text_form_field.dart';
+import 'package:easyplane_app/ui/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

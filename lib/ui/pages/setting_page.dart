@@ -11,7 +11,7 @@ class SettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SafeArea(
       child: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is AuthFailed) {
@@ -30,6 +30,8 @@ class SettingPage extends StatelessWidget {
                 color: navyColor,
               ),
             );
+          } else if (state is AuthSuccess) {
+            return profileCard(state, context);
           }
           return CustomButton(
             textButton: 'Sign Out',
@@ -39,6 +41,64 @@ class SettingPage extends StatelessWidget {
             widthButton: 220,
           );
         },
+      ),
+    );
+  }
+
+  Center profileCard(AuthSuccess state, BuildContext context) {
+    return Center(
+      child: Container(
+        margin: EdgeInsets.all(defaultMargin),
+        padding: EdgeInsets.all(defaultMargin),
+        decoration: BoxDecoration(
+            color: whiteColor,
+            borderRadius: BorderRadius.circular(defaultRadius)),
+        height: 270,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Name",
+              style: blueText.copyWith(
+                fontWeight: extrabold,
+              ),
+            ),
+            Text(
+              state.user.name,
+              style: navyText.copyWith(fontSize: 16, fontWeight: semiBold),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Email",
+              style: blueText.copyWith(
+                fontWeight: extrabold,
+              ),
+            ),
+            Text(
+              state.user.email,
+              style: navyText.copyWith(fontSize: 16, fontWeight: semiBold),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Hobby",
+              style: blueText.copyWith(
+                fontWeight: extrabold,
+              ),
+            ),
+            Text(
+              state.user.hobby == '' ? 'Update your hobby' : state.user.hobby,
+              style: state.user.hobby == ''
+                  ? greyText
+                  : navyText.copyWith(fontSize: 16, fontWeight: semiBold),
+            ),
+            const SizedBox(height: 10),
+            CustomButton(
+                textButton: 'Sign Out',
+                onPressedButton: () {
+                  context.read<AuthCubit>().signOut();
+                })
+          ],
+        ),
       ),
     );
   }

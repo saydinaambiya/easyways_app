@@ -17,7 +17,7 @@ class DestinationService {
       ).toList();
       return destinations;
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 }
